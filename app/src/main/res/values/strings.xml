@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">BabyDoge Cloud Mining App</string>
+    <string name="welcome_header">BIGGEST MINING \n POOL</string>
+    <string name="welcome_button_text">Get started</string>
+    <string name="hi_there">Hi there</string>
+    <string name="welcome_back_to_the_biggest_online_mining_pool">Welcome back to the biggest cloud mining pool</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="enter_password">Enter password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="login">Login</string>
+    <string name="account_success">Account created successfully</string>
+    <string name="password_required">Password is required</string>
+    <string name="confirm_password_required">Renter password is required</string>
+    <string name="email_required">Email is required</string>
+    <string name="full_name_required">Full name is required</string>
+    <string name="confirm_password">Please confirm both password</string>
+    <string name="password_count_error">At least 6 characters</string>
+    <string name="baby_doge_n_cloud_mining">Baby doge \n cloud mining</string>
+    <string name="start_mining">Start mining</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="bannar_ad_id">ca-app-pub-8474139776659956/3795343342</string>
+    <string name="bannar_ad_id_test">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="sign_up">Sign up</string>
+    <string name="withdraw_your_mined_babydoge">Withdraw your mined babydoge</string>
+    <string name="notification_title">Babydoge biggest cloud mining</string>
+    <string name="notification_message">Currently mining</string>
+    <string name="mining_done">Congratulations mining round successfully completed</string>
+    <string name="withdraw1">Withdraw</string>
+    <string name="past_bep20_wallet_address">Past BEP20 wallet address</string>
+    <string name="dialog_title">We apologies</string>
+    <string name="dialog_message">Your current balance is not up-to threshold</string>
+    <string name="dialog_button_text">Keep mining</string>
+
+</resources>
