@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding;
 
     private val TAG = "MainActivity"
-    val countDownTime = 121000
+    val countDownTime = 14400000
     private var mInterstitialAd: InterstitialAd? = null
     var isWithdrawButton = false
 
@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
 
         InterstitialAd.load(
             this,
-            "ca-app-pub-3940256099942544/1033173712",
+            "ca-app-pub-8474139776659956/7899719200",
             adRequest,
             object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
@@ -129,6 +129,7 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onAdLoaded(interstitialAd: InterstitialAd) {
                     mInterstitialAd = interstitialAd
+                    mInterstitialAd?.show(this@MainActivity)
                 }
             })
 

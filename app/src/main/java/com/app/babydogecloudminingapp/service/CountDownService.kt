@@ -68,7 +68,7 @@ class CountDownService : Service() {
         startForeground(23, notification)
 
         var miningCountDao: MiningCountDao = MiningCountDatabase.getDB(this)?.miningDao()!!
-
+//        14400000
         val timer = object : CountDownTimer(14400000, 1000) {
             override fun onTick(timePassed: Long) {
 
@@ -87,6 +87,7 @@ class CountDownService : Service() {
                 notificationManagerCompat.notify(29, notificationDone)
 
                 stopForeground(true)
+
                 stopSelf()
 
             }
