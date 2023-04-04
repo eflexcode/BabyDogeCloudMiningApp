@@ -19,6 +19,10 @@ import com.app.babydogecloudminingapp.viewmodel.CountDownViewModel
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.startapp.sdk.adsbase.Ad
+import com.startapp.sdk.adsbase.StartAppAd
+import com.startapp.sdk.adsbase.StartAppSDK
+import com.startapp.sdk.adsbase.adlisteners.AdEventListener
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -34,18 +38,20 @@ class MainActivity : AppCompatActivity() {
     var isWithdrawButton = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        StartAppAd.disableSplash()
         super.onCreate(savedInstanceState)
+        StartAppSDK.init(this, "203772926", false);
 
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
 
-        MobileAds.initialize(this) {}
+        val startAppAd = StartAppAd(this)
 
-        val adRequest = AdRequest.Builder().build()
-        binding.adView.loadAd(adRequest)
-        binding.adView2.loadAd(adRequest)
-        loadAd()
+//        val adRequest = AdRequest.Builder().build()
+//        binding.adView.loadAd(adRequest)
+//        binding.adView2.loadAd(adRequest)
+//        loadAd()
 
         var progress = 1000
 
@@ -84,7 +90,17 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                mInterstitialAd?.show(this@MainActivity)
+                startAppAd.loadAd(StartAppAd.AdMode.REWARDED_VIDEO,
+                    object : AdEventListener {
+                        override fun onReceiveAd(p0: Ad) {
+                            startAppAd.showAd()
+                        }
+
+                        override fun onFailedToReceiveAd(p0: Ad?) {
+                            TODO("Not yet implemented")
+                        }
+
+                    })
 
             }
 

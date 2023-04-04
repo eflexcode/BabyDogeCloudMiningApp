@@ -17,6 +17,9 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.startapp.sdk.adsbase.Ad
+import com.startapp.sdk.adsbase.StartAppAd
+import com.startapp.sdk.adsbase.adlisteners.AdEventListener
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -31,6 +34,7 @@ class WithdrawActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityWithdrawBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val startAppAd = StartAppAd(this)
 
 
         val miningViewModel: MiningViewModel =
@@ -68,7 +72,19 @@ class WithdrawActivity : AppCompatActivity() {
                             }
 
                         })
-                    materialAlertDialogBuilder.show()
+                    startAppAd.loadAd(StartAppAd.AdMode.REWARDED_VIDEO,
+                        object : AdEventListener {
+                            override fun onReceiveAd(p0: Ad) {
+                                startAppAd.showAd()
+                            }
+
+                            override fun onFailedToReceiveAd(p0: Ad?) {
+                                TODO("Not yet implemented")
+                            }
+
+                        })
+
+
                 }
             }else{
                 val materialAlertDialogBuilder =
@@ -85,12 +101,25 @@ class WithdrawActivity : AppCompatActivity() {
                         }
 
                     })
-                materialAlertDialogBuilder.show()
+                startAppAd.loadAd(StartAppAd.AdMode.REWARDED_VIDEO,
+                    object : AdEventListener {
+                        override fun onReceiveAd(p0: Ad) {
+                            startAppAd.showAd()
+                        }
+
+                        override fun onFailedToReceiveAd(p0: Ad?) {
+                            TODO("Not yet implemented")
+                        }
+
+                    })
+
+
+
             }
 
         }
 
-        loadAd()
+//        loadAd()
 
     }
 
