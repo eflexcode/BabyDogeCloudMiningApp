@@ -40,17 +40,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         StartAppAd.disableSplash()
         super.onCreate(savedInstanceState)
-        StartAppSDK.init(this, "203772926", false);
+//        StartAppSDK.init(this, "203772926", false);
 
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
 
-        val startAppAd = StartAppAd(this)
+//        val startAppAd = StartAppAd(this)
 
-//        val adRequest = AdRequest.Builder().build()
-//        binding.adView.loadAd(adRequest)
-//        binding.adView2.loadAd(adRequest)
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
+        binding.adView2.loadAd(adRequest)
 //        loadAd()
 
         var progress = 1000
@@ -90,17 +90,17 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                startAppAd.loadAd(StartAppAd.AdMode.REWARDED_VIDEO,
-                    object : AdEventListener {
-                        override fun onReceiveAd(p0: Ad) {
-                            startAppAd.showAd()
-                        }
-
-                        override fun onFailedToReceiveAd(p0: Ad?) {
-                            TODO("Not yet implemented")
-                        }
-
-                    })
+//                startAppAd.loadAd(StartAppAd.AdMode.REWARDED_VIDEO,
+//                    object : AdEventListener {
+//                        override fun onReceiveAd(p0: Ad) {
+//                            startAppAd.showAd()
+//                        }
+//
+//                        override fun onFailedToReceiveAd(p0: Ad?) {
+//                            TODO("Not yet implemented")
+//                        }
+//
+//                    })
 
             }
 
