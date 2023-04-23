@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
         binding.adView2.loadAd(adRequest)
-//        loadAd()
+        loadAd()
 
         var progress = 1000
 
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.startButton.setOnClickListener {
-
+loadAd()
             val miningHistory = miningCountDao.getEverything()
 
             val intent = Intent(this, CountDownService::class.java)
@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
 
         InterstitialAd.load(
             this,
-            "ca-app-pub-8474139776659956/7899719200",
+            "ca-app-pub-9621075925257297/4263705069",
             adRequest,
             object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
@@ -156,7 +156,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onAdDismissedFullScreenContent() {
                 mInterstitialAd = null
-                loadAd()
+//                loadAd()
 
 
 
@@ -164,7 +164,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onAdFailedToShowFullScreenContent(p0: AdError) {
                 mInterstitialAd = null
-                loadAd()
+//                loadAd()
             }
 
             override fun onAdImpression() {

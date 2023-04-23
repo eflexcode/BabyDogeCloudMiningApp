@@ -51,7 +51,7 @@ class WithdrawActivity : AppCompatActivity() {
         val miningCountDao: MiningCountDao = MiningCountDatabase.getDB(this)?.miningDao()!!
 
         binding.withdrawButton.setOnClickListener {
-
+loadAd()
             val miningHistory = miningCountDao.getEverything()
 
             if (miningHistory.isNotEmpty()) {
@@ -119,7 +119,7 @@ class WithdrawActivity : AppCompatActivity() {
 
         }
 
-//        loadAd()
+        loadAd()
 
     }
 
@@ -129,7 +129,7 @@ class WithdrawActivity : AppCompatActivity() {
 
         InterstitialAd.load(
             this,
-            "ca-app-pub-8474139776659956/7899719200",
+            "ca-app-pub-9621075925257297/4263705069",
             adRequest,
             object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
