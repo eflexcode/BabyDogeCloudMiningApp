@@ -51,7 +51,7 @@ class WithdrawActivity : AppCompatActivity() {
         val miningCountDao: MiningCountDao = MiningCountDatabase.getDB(this)?.miningDao()!!
 
         binding.withdrawButton.setOnClickListener {
-loadAd()
+//loadAd()
             val miningHistory = miningCountDao.getEverything()
 
             if (miningHistory.isNotEmpty()) {
@@ -119,7 +119,7 @@ loadAd()
 
         }
 
-        loadAd()
+//        loadAd()
 
     }
 

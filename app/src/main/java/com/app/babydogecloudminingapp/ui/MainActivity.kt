@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
         binding.adView2.loadAd(adRequest)
-        loadAd()
+//        loadAd()
 
         var progress = 1000
 
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.startButton.setOnClickListener {
-loadAd()
+//loadAd()
             val miningHistory = miningCountDao.getEverything()
 
             val intent = Intent(this, CountDownService::class.java)
